@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sign Language Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='helpstyle.css') }}">
+  <style>
+    /* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f7f7f7, #ffffff);
+  color: #444;
+  line-height: 1.6; /* Ensures consistent line spacing for readability */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #4a90e2;
+}
+
+.sidebar a {
+  color: #444;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.05);
+}
+
+.sidebar .menu-icon {
+  font-size: 1.5rem;
+  color: #4a90e2;
+}
+
+.sidebar a.active {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+  position: relative;
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #4a90e2;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #4a90e2;
+  margin-bottom: 1.5rem;
+}
+
+section p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+section p a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+section p a:hover {
+  text-decoration: underline;
+}
+
+/* Alphabet Section */
+.alphabet-grid{
+  max-width: 100%;
+}
+.alphabet-item img {
+  max-width: 100%;
+  height: auto;
+  width: 1150px;
+  justify-content: center;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.alphabet-item p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+
+  .alphabet-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .alphabet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alphabet-item p {
+    font-size: 1.2rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Dashboard</h2>
+    <a href="/"><span class="menu-icon"><i class="fas fa-home"></i></span> Home</a>
+    <a href="/"><span class="menu-icon"><i class="fas fa-question-circle"></i></span> Help</a>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- ASL Introduction -->
+    <section class="asl-intro">
+      <h2>What is German Sign Language?</h2>
+      <p>German Sign Language (Deutsche Gebärdensprache, DGS) is the sign language used by the Deaf community in Germany and parts of Austria. Like all sign languages, DGS is a fully developed and complex language with its own grammar, vocabulary, and syntax, distinct from spoken German. It is a visual-gestural language that relies on hand movements, facial expressions, and body language to communicate.</p>
+
+       <p>DGS, like all sign languages, uses visual cues, including hand shapes, facial expressions, and body movements, to convey meaning. It is based on spatial communication and is fully expressive without the need for sound.</p>
+    </section>
+
+    <!-- ASL Alphabet Images -->
+    <section class="asl-alphabet">
+      <h2>GSL Alphabet</h2>
+      <div class="alphabet-grid">
+        <!-- Example Alphabet Images -->
+        <div class="alphabet-item">
+            <img src="{{ url_for('static', filename='image/german_image.jpg') }}" alt="Letter A">
+          <p>German Sign Language</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Line Information -->
+    <section class="helpline">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or need assistance, we are here to help! Our team is available to provide support for any inquiries regarding German Sign Language or our platform.</p>
+      <p><strong>Helpline Number:</strong> <a href="tel:+18001234567" class="contact-link">1-800-123-4567</a></p>
+      <p>If you're unable to reach us by phone, you can also send an email to our support team at:</p>
+      <p><strong>Email:</strong> <a href="mailto:support@signlanguagehelp.com" class="contact-link">support@signlanguagehelp.com</a></p>
+      <p>Our support team is available 24/7 to assist you with any questions or issues you may have. We value your communication and look forward to assisting you.</p>
+    </section>
+  </div>
+</body>
+</html>

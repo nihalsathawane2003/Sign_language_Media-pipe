@@ -1,0 +1,335 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #e5ebec, #ffffff);
+  color: #444;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #4a90e2;
+}
+
+.sidebar a {
+  color: #444;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.05);
+}
+
+.sidebar .menu-icon {
+  font-size: 1.5rem;
+  color: #4a90e2;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  position: relative;
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #444;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Section */
+.section {
+  background-color: hsl(0, 0%, 100%);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 790px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#prediction-section{
+  background-color: hsl(0, 0%, 100%);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 790px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* padding-left: 100px; */
+}
+
+#prediction-section #resetword{
+  margin-left: 296px;
+}
+
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Video Feed */
+.video-placeholder {
+  width:700px;
+  height: 550px; /* Adjust height if needed */
+  background-color: #f0f4f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #8b8b8b;
+  font-style: italic;
+}
+
+#videoFrame {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Ensures video fills the container without distortion */
+  border-radius: 12px;
+}
+
+/* Buttons */
+.button {
+  margin-top: 1rem;
+  height: 50px;
+  padding: 1rem 2rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #357ab7;
+  transform: translateY(-3px);
+}
+
+/* File Upload Form */
+.upload-section form {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.upload-section input[type="file"] {
+  font-size: 1rem;
+  width: 100%;
+  max-width: 950px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.upload-section input[type="file"]:hover {
+  border-color: #4a90e2;
+}
+
+.upload-section button {
+  height: 50px;
+  background-color: #4a90e2;
+  color: white;
+  width: 200px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.upload-section button:hover {
+  background-color: #357ab7;
+  transform: translateY(-3px);
+}
+
+/* Language Selector */
+.language-selector {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.language-selector:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.language-selector span {
+  font-weight: bold;
+  color: #333;
+}
+
+.language-selector .icon {
+  font-size: 1.3rem;
+  color: #4a90e2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .language-selector {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Styling for the Detected Word section */
+.detected-word-container {
+  background-color: #ffffff;   /* Matching the background color */
+  border-radius: 12px;         /* Rounded corners for consistency */
+  padding: 2.5rem;             /* Padding to match other containers */
+  margin-top: 2rem; 
+  margin-bottom: 2rem;         /* Space above the section */
+  text-align: center;          /* Center the text */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft shadow like other sections */
+  max-width: 950px;            /* Ensure max-width matches other sections */
+  margin-left: auto;           /* Center the container */
+  margin-right: auto;          /* Center the container */
+  transition: transform 0.3s, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  height: auto;                /* Let the height be flexible based on content */
+  min-height: 150px;           /* Minimum height to match the height of other sections */
+  word-wrap: break-word;       /* Allow words to break if too long */
+  overflow-wrap: break-word;   /* Ensure very long words break onto the next line */
+}
+
+/* Hover effect for the Detected Word container */
+.detected-word-container:hover {
+  transform: translateY(-5px);  /* Slightly lift the container */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Larger shadow on hover */
+}
+
+.detected-word-container p {
+  font-size: 18px;             /* Font size for the detected word */
+  font-family: 'Roboto', sans-serif; /* Clean font for readability */
+  font-weight: 600;            /* Bold text to highlight the word */
+  color: #333333;              /* Dark text color */
+  margin: 0;                   /* Remove default margin */
+  white-space: normal;         /* Allow wrapping of long words */
+}
+
+.detected-word-container strong {
+  color: #007BFF;              /* Highlight the detected word in blue */
+  font-size: 20px;             /* Slightly larger font for the detected word */
+}
+
+
+/* Styling for the camera control section */
+#camera-control {
+  text-align: center;          /* Center the button horizontally */
+  margin-top: 20px;            /* Space from the top */
+  margin-bottom: 20px;         /* Space from the bottom */
+}
+
+/* Styling for the toggle button */
+#toggleButton {
+  background-color: #4a90e2;   /* Blue background color */
+  color: white;                /* White text color */
+  border: none;                /* Remove default border */
+  padding: 10px 20px;          /* Padding around the text */
+  font-size: 16px;             /* Font size for the button */
+  border-radius: 8px;          /* Rounded corners for the button */
+  cursor: pointer;             /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+#toggleButton:hover {
+  background-color: #0056b3;   /* Darker blue on hover */
+  transform: scale(1.05);       /* Slightly enlarge the button on hover */
+}
+
+#toggleButton:focus {
+  outline: none;               /* Remove default outline when focused */
+}
+
+#resetword {
+  background-color: #4a90e2; /* Green background */
+  align-items: center;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#resetword:hover {
+  background-color:#0056b3; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#resetword:active {
+  background-color: #0056b3; /* Even darker green when pressed */
+  transform: scale(1); /* Reset scale when clicked */
+}
+
+#resetword:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5); /* Focus ring effect */
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gesto-Language</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="icon"><img src="{{ url_for('static', filename='image/logo.png') }}" style="width:100px;height:100px;"></div>
+    <h1>Hello, Welcome to Gesto-Language!!</h1>
+    <p>Select your Gesto-language</p>
+    <div class="button-group">
+      <button onclick="location.href='templates/american'" class="button">American</button>
+      <button onclick="location.href='/templates/indian'" class="button">Indian</button>
+      <button onclick="location.href='/templates/german'" class="button">German</button>
+    </div>
+  </div>
+</body>
+</html>

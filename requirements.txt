@@ -1,0 +1,6 @@
+Flask
+opencv-python
+mediapipe
+matplotlib
+scikit-learn
+numpy

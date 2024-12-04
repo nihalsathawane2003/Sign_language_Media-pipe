@@ -1,0 +1,25 @@
+
+# Ignore temporary, log, or system files
+*.log
+*.tmp
+*.DS_Store
+*.ipynb_checkpoints/
+Thumbs.db
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# # Ignore large model files
+# *.h5
+# *.keras
+# *.pth
+# *.pt
+# *.pt
