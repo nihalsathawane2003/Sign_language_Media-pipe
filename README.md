@@ -9,7 +9,7 @@ This project implements **American, Indian, and German Sign Language Detection**
   - Detects alphabets from **American Sign Language (ASL)**, **Indian Sign Language (ISL)**, and **German Sign Language (GSL)**.
 - **Alphabet Detection**: Uses **Mediapipe** for real-time gesture recognition.
 - **Word Formation**: Automatically forms meaningful words from detected alphabets.
-- **Speech Synthesis**: Speaks the detected words aloud using TTS libraries.
+- **Speech Synthesis**: Speaks the detected words aloud using Js.
 - **Web Application**: A simple and user-friendly interface built with **Flask**.
 
 ---
@@ -18,7 +18,7 @@ This project implements **American, Indian, and German Sign Language Detection**
 - **Mediapipe**: For real-time hand tracking and gesture detection.
 - **Flask**: To create a web-based user interface for detection.
 - **Python**: For training models, real-time detection, and speech synthesis.
-- **Text-to-Speech (TTS)**: Converts the formed words into speech (e.g., using `pyttsx3` or `gTTS`).
+- **Text-to-Speech (TTS)**: Converts the formed words into speech .
 - **Kaggle Datasets**: Used for training models.
 
 ---
@@ -33,7 +33,6 @@ This project implements **American, Indian, and German Sign Language Detection**
      - `American_Training.ipynb`
      - `Indian_Training.ipynb`
      - `German_Training.ipynb`
-   - Models are saved in the `models/` directory after training.
 
 3. **Integration with Flask**:
    - The trained models are integrated into a Flask application.
@@ -49,14 +48,15 @@ This project implements **American, Indian, and German Sign Language Detection**
 ### Prerequisites:
 - Python 3.8 or later
 - Necessary Python libraries:
-  - `mediapipe`
-  - `flask`
-  - `torch`
-  - `pyttsx3` (or `gTTS` for speech synthesis)
+  - `Flask`
   - `opencv-python`
+  - `mediapipe`
+  - `matplotlib` 
+  - `scikit-learn`
+  - `numpy` 
 
 ### Steps to Run the Project:
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/sign-language-detection.git
+   git clone https://github.com/nihalsathawane2003/Sign_language_Media-pipe
 
